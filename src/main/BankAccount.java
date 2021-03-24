@@ -14,21 +14,21 @@ public class BankAccount {
         this.customerId = cid;
     }
 
-   public void deposit(int amount) {
+    public void deposit(int amount) {
         if (amount != 0) {
             balance = balance + amount;
             previousTransaction = amount;
         }
     }
 
-   public void withdraw(int amount) {
+    public void withdraw(int amount) {
         if (amount != 0) {
             balance = balance - amount;
             previousTransaction = -amount;
         }
     }
 
-   public void getPreviousTransaction() {
+    public void getPreviousTransaction() {
         if (previousTransaction > 0) {
             System.out.println("Deposited: " + previousTransaction);
         } else if (previousTransaction < 0) {
@@ -38,20 +38,19 @@ public class BankAccount {
         }
     }
 
-   public void showMenu() {
-        char option = '\0';
+    public void showMenu() {
+        char option;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome " + customerName);
         System.out.println("Your ID is " + customerId);
-        
 
         do {
             System.out.println("A. Check Balance");
-        System.out.println("B. Deposit");
-        System.out.println("C. Withdraw");
-        System.out.println("D. Previous transaction");
-        System.out.println("E. Exit");
+            System.out.println("B. Deposit");
+            System.out.println("C. Withdraw");
+            System.out.println("D. Previous transaction");
+            System.out.println("E. Exit");
             System.out.println("enter option");
             option = sc.next().charAt(0);
 
